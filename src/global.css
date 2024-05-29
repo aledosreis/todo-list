@@ -94,3 +94,55 @@ body, input, textarea, button {
     border-radius: 0.5rem;
     cursor: pointer;
 }
+
+/* tasks */
+#task-container {
+    margin-top: 4rem;
+}
+
+#task-container .info {
+    display: flex;
+    justify-content: space-between;
+}
+
+#task-container .info .created {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+#task-container .info .created span:first-of-type {
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+#task-container .info .created span:last-of-type {
+    color: var(--gray-200);
+    font-weight: 700;
+    font-size: 0.75rem;
+    background: var(--gray-400);
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+}
+
+#task-container .info .done {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+#task-container .info .done span:first-of-type {
+    color: var(--purple);
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+#task-container .info .done span:last-of-type {
+    color: var(--gray-200);
+    font-weight: 700;
+    font-size: 0.75rem;
+    background: var(--gray-400);
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+}

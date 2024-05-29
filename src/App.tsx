@@ -23,6 +23,20 @@ export function App() {
             <PlusCircle size={16} weight='bold' />
           </button>
         </form>
+
+        <div id='task-container'>
+          <div className='info'>
+            <div className='created'>
+              <span>Tarefas criadas</span>
+              <span>0</span>
+            </div>
+            <div className='done'>
+              <span>Concluídas</span>
+              <span>0</span>
+            </div>
+          </div>
+          <div className='tasks'></div>
+        </div>
       </div>
     </div>
   )
