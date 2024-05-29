@@ -23,8 +23,13 @@ body {
     background: var(--gray-600);
     color: var(--gray-300);
     -webkit-font-smoothing: antialiased;
-    font-family: 'Inter', sans-serif;
 }
+
+body, input, textarea, button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+  }
 
 /* header */
 #header {
@@ -52,4 +57,40 @@ body {
 
 #header span:last-of-type {
     color: var(--purple-dark);
+}
+
+/* page */
+#container {
+    width: 46rem;
+    margin: 0 auto;
+}
+
+/* new-task */
+#new-task {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+#new-task input {
+    flex: 1;
+    padding: 1rem;
+    background: var(--gray-500);
+    color: var(--gray-300);
+    border: 0;
+    border-radius: 0.5rem;
+}
+
+#new-task button {
+    background: var(--blue-dark);
+    color: var(--gray-100);
+    font-weight: 700;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 1rem;
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
