@@ -1,0 +1,122 @@
+/* header */
+.header {
+  background: var(--gray-700);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 4.5rem 0;
+}
+
+.header img {
+  width: 22px;
+  height: 36px;
+}
+
+.header span {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.header span:first-of-type {
+  color: var(--blue);
+}
+
+.header span:last-of-type {
+  color: var(--purple-dark);
+}
+
+/* page */
+.container {
+  width: 46rem;
+  margin: 0 auto;
+}
+
+/* new-task */
+.newTask {
+  display: flex;
+  gap: 0.5rem;
+  transform: translateY(-50%);
+}
+
+.newTask input {
+  flex: 1;
+  padding: 1rem;
+  background: var(--gray-500);
+  color: var(--gray-300);
+  border: 0;
+  border-radius: 0.5rem;
+}
+
+.newTask button {
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  font-weight: 700;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* tasks */
+.taskContainer {
+  margin-top: 2rem;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.created {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.created span:first-of-type {
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.created span:last-of-type {
+  color: var(--gray-200);
+  font-weight: 700;
+  font-size: 0.75rem;
+  background: var(--gray-400);
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.done {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.done span:first-of-type {
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.done span:last-of-type {
+  color: var(--gray-200);
+  font-weight: 700;
+  font-size: 0.75rem;
+  background: var(--gray-400);
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+}
+
+/* tasks */
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}

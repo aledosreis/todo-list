@@ -1,10 +1,12 @@
 import { PlusCircle } from "phosphor-react";
 import rocketImg from "./assets/rocket.svg";
 
-import "./global.css";
 import { Task, TaskType } from "./components/Task";
 import { useState } from "react";
 import { EmptyList } from "./components/EmptyList";
+
+import "./global.css";
+import styles from "./App.module.css";
 
 const exampleTasks: TaskType[] = [
   {
@@ -32,7 +34,7 @@ export function App() {
 
   return (
     <div>
-      <div id="header">
+      <div className={styles.header}>
         <img src={rocketImg} alt="Desenho de um foguete" />
         <div>
           <span>to</span>
@@ -40,8 +42,8 @@ export function App() {
         </div>
       </div>
 
-      <div id="container">
-        <form id="new-task">
+      <div className={styles.container}>
+        <form className={styles.newTask}>
           <input type="text" placeholder="Adicione uma nova tarefa" />
           <button>
             Criar
@@ -49,20 +51,20 @@ export function App() {
           </button>
         </form>
 
-        <div id="task-container">
-          <div className="info">
-            <div className="created">
+        <div className={styles.taskContainer}>
+          <div className={styles.info}>
+            <div className={styles.created}>
               <span>Tarefas criadas</span>
               <span>0</span>
             </div>
-            <div className="done">
+            <div className={styles.done}>
               <span>Concluídas</span>
               <span>0</span>
             </div>
           </div>
 
           {tasks.length > 0 ? (
-            <div className="tasks">
+            <div className={styles.tasks}>
               {tasks.map((task) => {
                 return (
                   <Task task={task} key={task.id} onDeleteTask={deleteTask} />
