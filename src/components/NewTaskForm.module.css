@@ -13,6 +13,11 @@
   border-radius: 0.5rem;
 }
 
+.newTask input:focus {
+  color: var(--gray-100);
+  outline: 1px solid var(--purple-dark);
+}
+
 .newTask button {
   background: var(--blue-dark);
   color: var(--gray-100);
