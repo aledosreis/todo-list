@@ -1,0 +1,27 @@
+/* empty list */
+.empty {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  border-top: 1px solid var(--gray-400);
+  border-radius: 0.5rem;
+  gap: 1rem;
+}
+
+.empty img {
+  width: 3.5rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.4;
+}
+
+.info span:first-of-type {
+  font-weight: 700;
+}

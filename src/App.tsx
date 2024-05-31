@@ -1,10 +1,10 @@
 import { PlusCircle } from "phosphor-react";
 import rocketImg from "./assets/rocket.svg";
-// import clipboardImg from './assets/clipboard.svg'
 
 import "./global.css";
 import { Task, TaskType } from "./components/Task";
 import { useState } from "react";
+import { EmptyList } from "./components/EmptyList";
 
 const exampleTasks: TaskType[] = [
   {
@@ -60,20 +60,18 @@ export function App() {
               <span>0</span>
             </div>
           </div>
-          {/* <div className='empty'>
-            <img src={clipboardImg} alt="clipboard image" />
-            <div className='info'>
-              <span>Você ainda não tem tarefas cadastradas</span>
-              <span>Crie tarefas e organize seus itens a fazer</span>
+
+          {tasks.length > 0 ? (
+            <div className="tasks">
+              {tasks.map((task) => {
+                return (
+                  <Task task={task} key={task.id} onDeleteTask={deleteTask} />
+                );
+              })}
             </div>
-          </div> */}
-          <div className="tasks">
-            {tasks.map((task) => {
-              return (
-                <Task task={task} key={task.id} onDeleteTask={deleteTask} />
-              );
-            })}
-          </div>
+          ) : (
+            <EmptyList />
+          )}
         </div>
       </div>
     </div>
