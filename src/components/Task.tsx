@@ -12,13 +12,19 @@ export interface TaskType {
 interface TaskProps {
   task: TaskType;
   onDeleteTask: (task: TaskType) => void;
+  onToggleTaskCompletion: (task: TaskType) => void;
 }
 
-export function Task({ task, onDeleteTask }: TaskProps) {
+export function Task({
+  task,
+  onDeleteTask,
+  onToggleTaskCompletion,
+}: TaskProps) {
   const [isDone, setIsDone] = useState(task.done);
 
   function toggleTaskCompletion() {
     setIsDone(!isDone);
+    onToggleTaskCompletion(task);
   }
 
   function deleteTask() {

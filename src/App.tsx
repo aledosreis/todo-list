@@ -10,12 +10,24 @@ import "./global.css";
 import styles from "./App.module.css";
 
 import { tasks as exampleTasks } from "./data/tasks";
+import { TasksInfo } from "./components/TasksInfo";
 
 export function App() {
   const [tasks, setTasks] = useState<TaskType[]>(exampleTasks);
 
   function createTask(newTask: TaskType) {
     setTasks([...tasks, newTask]);
+  }
+
+  function handleToggleCompletion(taskToChange: TaskType) {
+    const updatedTasks = [...tasks];
+    const taskToChangeIndex = updatedTasks.findIndex(
+      (task) => task.id === taskToChange.id
+    );
+    updatedTasks[taskToChangeIndex]["done"] =
+      !updatedTasks[taskToChangeIndex]["done"];
+
+    setTasks(updatedTasks);
   }
 
   function deleteTask(taskToDelete: TaskType) {
@@ -40,22 +52,21 @@ export function App() {
         <NewTaskForm onCreateTask={createTask} />
 
         <div className={styles.taskContainer}>
-          <div className={styles.info}>
-            <div className={styles.created}>
-              <span>Tarefas criadas</span>
-              <span>0</span>
-            </div>
-            <div className={styles.done}>
-              <span>Concluídas</span>
-              <span>0</span>
-            </div>
-          </div>
+          <TasksInfo
+            totalTasks={tasks.length}
+            completedTasks={tasks.filter((task) => task.done === true).length}
+          />
 
           {tasks.length > 0 ? (
             <div className={styles.tasks}>
               {tasks.map((task) => {
                 return (
-                  <Task task={task} key={task.id} onDeleteTask={deleteTask} />
+                  <Task
+                    task={task}
+                    key={task.id}
+                    onDeleteTask={deleteTask}
+                    onToggleTaskCompletion={handleToggleCompletion}
+                  />
                 );
               })}
             </div>

@@ -1,0 +1,31 @@
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.status:first-of-type > span:first-of-type {
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.countBadge {
+  color: var(--gray-200);
+  font-weight: 700;
+  font-size: 0.75rem;
+  background: var(--gray-400);
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.status:last-of-type > span:first-of-type {
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
