@@ -61,4 +61,14 @@
 
 .task svg {
   cursor: pointer;
+  padding: 5px;
+  box-sizing: initial;
+  border-radius: 0.5rem;
+
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.task svg:hover {
+  color: var(--danger);
+  background: var(--gray-400);
 }
