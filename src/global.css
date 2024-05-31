@@ -1,237 +1,186 @@
 :root {
-    --gray-100: #F2F2F2;
-    --gray-200: #D9D9D9;
-    --gray-300: #808080;
-    --gray-400: #333333;
-    --gray-500: #262626;
-    --gray-600: #1A1A1A;
-    --gray-700: #0D0D0D;
-    --purple: #8284FA;
-    --purple-dark: #5E60CE;
-    --blue: #4EA8DE;
-    --blue-dark: #1E6F9F;
-    --danger: #E25858;
+  --gray-100: #f2f2f2;
+  --gray-200: #d9d9d9;
+  --gray-300: #808080;
+  --gray-400: #333333;
+  --gray-500: #262626;
+  --gray-600: #1a1a1a;
+  --gray-700: #0d0d0d;
+  --purple: #8284fa;
+  --purple-dark: #5e60ce;
+  --blue: #4ea8de;
+  --blue-dark: #1e6f9f;
+  --danger: #e25858;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: var(--gray-600);
-    color: var(--gray-300);
-    -webkit-font-smoothing: antialiased;
+  background: var(--gray-600);
+  color: var(--gray-300);
+  -webkit-font-smoothing: antialiased;
 }
 
-body, input, textarea, button {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-  }
+body,
+input,
+textarea,
+button {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
 
 /* header */
 #header {
-    background: var(--gray-700);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 4.5rem 0;
+  background: var(--gray-700);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 4.5rem 0;
 }
 
 #header img {
-    width: 22px;
-    height: 36px;
+  width: 22px;
+  height: 36px;
 }
 
 #header span {
-    font-size: 2.5rem;
-    font-weight: 900;
+  font-size: 2.5rem;
+  font-weight: 900;
 }
 
 #header span:first-of-type {
-    color: var(--blue);
+  color: var(--blue);
 }
 
 #header span:last-of-type {
-    color: var(--purple-dark);
+  color: var(--purple-dark);
 }
 
 /* page */
 #container {
-    width: 46rem;
-    margin: 0 auto;
+  width: 46rem;
+  margin: 0 auto;
 }
 
 /* new-task */
 #new-task {
-    display: flex;
-    gap: 0.5rem;
-    transform: translateY(-50%);
+  display: flex;
+  gap: 0.5rem;
+  transform: translateY(-50%);
 }
 
 #new-task input {
-    flex: 1;
-    padding: 1rem;
-    background: var(--gray-500);
-    color: var(--gray-300);
-    border: 0;
-    border-radius: 0.5rem;
+  flex: 1;
+  padding: 1rem;
+  background: var(--gray-500);
+  color: var(--gray-300);
+  border: 0;
+  border-radius: 0.5rem;
 }
 
 #new-task button {
-    background: var(--blue-dark);
-    color: var(--gray-100);
-    font-weight: 700;
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    padding: 1rem;
-    border: 0;
-    border-radius: 0.5rem;
-    cursor: pointer;
+  background: var(--blue-dark);
+  color: var(--gray-100);
+  font-weight: 700;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 /* tasks */
 #task-container {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 #task-container .info {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 #task-container .info .created {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 #task-container .info .created span:first-of-type {
-    color: var(--blue);
-    font-weight: 700;
-    font-size: 0.875rem;
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 0.875rem;
 }
 
 #task-container .info .created span:last-of-type {
-    color: var(--gray-200);
-    font-weight: 700;
-    font-size: 0.75rem;
-    background: var(--gray-400);
-    padding: 0.125rem 0.5rem;
-    border-radius: 9999px;
+  color: var(--gray-200);
+  font-weight: 700;
+  font-size: 0.75rem;
+  background: var(--gray-400);
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
 }
 
 #task-container .info .done {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 #task-container .info .done span:first-of-type {
-    color: var(--purple);
-    font-weight: 700;
-    font-size: 0.875rem;
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 0.875rem;
 }
 
 #task-container .info .done span:last-of-type {
-    color: var(--gray-200);
-    font-weight: 700;
-    font-size: 0.75rem;
-    background: var(--gray-400);
-    padding: 0.125rem 0.5rem;
-    border-radius: 9999px;
+  color: var(--gray-200);
+  font-weight: 700;
+  font-size: 0.75rem;
+  background: var(--gray-400);
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
 }
 
 /* empty list */
 #task-container .empty {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1.5rem;
-    align-items: center;
-    justify-content: center;
-    padding: 4rem 1.5rem;
-    border-top: 1px solid var(--gray-400);
-    border-radius: 0.5rem;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  border-top: 1px solid var(--gray-400);
+  border-radius: 0.5rem;
+  gap: 1rem;
 }
 
 #task-container .empty img {
-    width: 3.5rem;
+  width: 3.5rem;
 }
 
 #task-container .empty .info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.4;
 }
 
 #task-container .empty .info span:first-of-type {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 /* tasks */
 #task-container .tasks {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
-}
-
-#task-container .tasks .task {
-    display: flex;
-    border-radius: 0.5rem;
-    background: var(--gray-500);
-    padding: 1rem;
-    gap: 0.75rem;
-    align-items: flex-start;
-}
-
-#task-container .tasks .task input[type="checkbox"] {
-    width: 1.3rem;
-    height: 1.3rem;
-    margin: 3px 0;
-    border-radius: 50%;
-    background: transparent;
-    border: 1px solid var(--blue);
-    vertical-align: middle;
-    appearance: none;
-    -webkit-appearance: none;
-    cursor: pointer;
-}
-
-#task-container .tasks .task input[type="checkbox"]:checked {
-    background: var(--purple-dark);
-    border: 1px solid var(--purple-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#task-container .tasks .task input[type="checkbox"]:checked::before {
-    content: '✔';
-    font-size: 0.75rem;
-    color: var(--gray-100);
-}
-
-#task-container .tasks .task input[type="checkbox"]:checked + span {
-    flex: 1;
-    font-size: 0.875rem;
-    text-decoration: line-through;
-    color: var(--gray-300);
-}
-
-#task-container .tasks .task span {
-    flex: 1;
-    font-size: 0.875rem;
-    line-height: 1.4;
-    color: var(--gray-100);
-}
-
-#task-container .tasks .task svg {
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
 }

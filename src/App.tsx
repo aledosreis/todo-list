@@ -1,14 +1,38 @@
-import { PlusCircle, Trash } from 'phosphor-react'
-import rocketImg from './assets/rocket.svg'
+import { PlusCircle } from "phosphor-react";
+import rocketImg from "./assets/rocket.svg";
 // import clipboardImg from './assets/clipboard.svg'
 
-import './global.css';
+import "./global.css";
+import { Task, TaskType } from "./components/Task";
+import { useState } from "react";
+
+const exampleTasks: TaskType[] = [
+  {
+    id: 1,
+    task: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.",
+    done: false,
+  },
+  {
+    id: 2,
+    task: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.",
+    done: true,
+  },
+];
 
 export function App() {
+  const [tasks, setTasks] = useState<TaskType[]>(exampleTasks);
+
+  function deleteTask(taskToDelete: TaskType) {
+    const tasksWithoutDeletedOne = tasks.filter((task) => {
+      return task.id !== taskToDelete.id;
+    });
+
+    setTasks(tasksWithoutDeletedOne);
+  }
 
   return (
     <div>
-      <div id='header'>
+      <div id="header">
         <img src={rocketImg} alt="Desenho de um foguete" />
         <div>
           <span>to</span>
@@ -17,21 +41,21 @@ export function App() {
       </div>
 
       <div id="container">
-        <form id='new-task'>
-          <input type="text" placeholder='Adicione uma nova tarefa' />
+        <form id="new-task">
+          <input type="text" placeholder="Adicione uma nova tarefa" />
           <button>
             Criar
-            <PlusCircle size={16} weight='bold' />
+            <PlusCircle size={16} weight="bold" />
           </button>
         </form>
 
-        <div id='task-container'>
-          <div className='info'>
-            <div className='created'>
+        <div id="task-container">
+          <div className="info">
+            <div className="created">
               <span>Tarefas criadas</span>
               <span>0</span>
             </div>
-            <div className='done'>
+            <div className="done">
               <span>Concluídas</span>
               <span>0</span>
             </div>
@@ -43,20 +67,15 @@ export function App() {
               <span>Crie tarefas e organize seus itens a fazer</span>
             </div>
           </div> */}
-          <div className='tasks'>
-            <div className='task'>
-              <input type="checkbox" name="" id="" />
-              <span>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
-              <Trash size={24} />
-            </div>
-            <div className='task done'>
-              <input type="checkbox" name="" id="" />
-              <span>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</span>
-              <Trash size={24} />
-            </div>
+          <div className="tasks">
+            {tasks.map((task) => {
+              return (
+                <Task task={task} key={task.id} onDeleteTask={deleteTask} />
+              );
+            })}
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
