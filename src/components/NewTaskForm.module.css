@@ -24,4 +24,10 @@
   border: 0;
   border-radius: 0.5rem;
   cursor: pointer;
+
+  transition: background-color 0.2s;
+}
+
+.newTask button:hover {
+  background: var(--blue);
 }
