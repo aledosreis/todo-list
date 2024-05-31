@@ -1,4 +1,3 @@
-import { PlusCircle } from "phosphor-react";
 import rocketImg from "./assets/rocket.svg";
 
 import { Task, TaskType } from "./components/Task";
@@ -8,21 +7,15 @@ import { EmptyList } from "./components/EmptyList";
 import "./global.css";
 import styles from "./App.module.css";
 
-const exampleTasks: TaskType[] = [
-  {
-    id: 1,
-    task: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.",
-    done: false,
-  },
-  {
-    id: 2,
-    task: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.",
-    done: true,
-  },
-];
+import { tasks as exampleTasks } from "./data/tasks";
+import { NewTaskForm } from "./components/NewTaskForm";
 
 export function App() {
   const [tasks, setTasks] = useState<TaskType[]>(exampleTasks);
+
+  function createTask(newTask: TaskType) {
+    setTasks([...tasks, newTask]);
+  }
 
   function deleteTask(taskToDelete: TaskType) {
     const tasksWithoutDeletedOne = tasks.filter((task) => {
@@ -43,13 +36,7 @@ export function App() {
       </div>
 
       <div className={styles.container}>
-        <form className={styles.newTask}>
-          <input type="text" placeholder="Adicione uma nova tarefa" />
-          <button>
-            Criar
-            <PlusCircle size={16} weight="bold" />
-          </button>
-        </form>
+        <NewTaskForm onCreateTask={createTask} />
 
         <div className={styles.taskContainer}>
           <div className={styles.info}>
