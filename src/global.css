@@ -145,3 +145,31 @@ body, input, textarea, button {
     padding: 0.125rem 0.5rem;
     border-radius: 9999px;
 }
+
+/* empty list */
+#task-container .empty {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    border-top: 1px solid var(--gray-400);
+    border-radius: 0.5rem;
+    gap: 1rem;
+}
+
+#task-container .empty img {
+    width: 3.5rem;
+}
+
+#task-container .empty .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.4;
+}
+
+#task-container .empty .info span:first-of-type {
+    font-weight: 700;
+}

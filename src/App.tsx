@@ -1,5 +1,6 @@
 import { PlusCircle } from 'phosphor-react'
 import rocketImg from './assets/rocket.svg'
+import clipboardImg from './assets/clipboard.svg'
 
 import './global.css';
 
@@ -35,7 +36,13 @@ export function App() {
               <span>0</span>
             </div>
           </div>
-          <div className='tasks'></div>
+          <div className='empty'>
+            <img src={clipboardImg} alt="clipboard image" />
+            <div className='info'>
+              <span>Você ainda não tem tarefas cadastradas</span>
+              <span>Crie tarefas e organize seus itens a fazer</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
