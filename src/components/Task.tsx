@@ -39,7 +39,7 @@ export function Task({
         checked={isDone}
         onChange={toggleTaskCompletion}
       />
-      <label htmlFor="task">{task.task}</label>
+      <label htmlFor={task.id.toString()}>{task.task}</label>
       <Trash size={24} onClick={deleteTask} />
     </div>
   );
