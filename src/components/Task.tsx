@@ -31,7 +31,7 @@ export function Task({ task, onDeleteTask }: TaskProps) {
         type="checkbox"
         id={task.id.toString()}
         checked={isDone}
-        onClick={toggleTaskCompletion}
+        onChange={toggleTaskCompletion}
       />
       <label htmlFor="task">{task.task}</label>
       <Trash size={24} onClick={deleteTask} />

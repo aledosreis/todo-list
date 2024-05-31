@@ -1,14 +1,15 @@
 import rocketImg from "./assets/rocket.svg";
 
-import { Task, TaskType } from "./components/Task";
 import { useState } from "react";
+
+import { Task, TaskType } from "./components/Task";
 import { EmptyList } from "./components/EmptyList";
+import { NewTaskForm } from "./components/NewTaskForm";
 
 import "./global.css";
 import styles from "./App.module.css";
 
 import { tasks as exampleTasks } from "./data/tasks";
-import { NewTaskForm } from "./components/NewTaskForm";
 
 export function App() {
   const [tasks, setTasks] = useState<TaskType[]>(exampleTasks);
